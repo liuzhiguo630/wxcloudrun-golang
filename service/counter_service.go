@@ -157,3 +157,14 @@ func getIndex() (string, error) {
 	}
 	return string(b), nil
 }
+
+func WxNotifyHandler(w http.ResponseWriter, r *http.Request) {
+	// print request body
+	body, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(string(body))
+	w.Write([]byte("success"))
+}

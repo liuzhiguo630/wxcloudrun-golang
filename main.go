@@ -15,6 +15,7 @@ func main() {
 
 	http.HandleFunc("/", service.IndexHandler)
 	http.HandleFunc("/api/count", service.CounterHandler)
+	http.HandleFunc("/wx/notify", service.WxNotifyHandler)
 
 	log.Fatal(http.ListenAndServe(":80", nil))
 }
